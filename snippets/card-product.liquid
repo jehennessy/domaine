@@ -1,4 +1,4 @@
-<div class="js-product-card flex flex-col gap-[15px] group" data-product-id="{{ card_product.id }}">
+<div class="js-product-card flex flex-col gap-[15px] max-w-[360px] group" data-product-id="{{ card_product.id }}">
   <a href="{{ card_product.url }}"class="rounded-[10px] border bg-white border-grey-5 flex relative p-[20px]">
     {% if card_product.compare_at_price != blank %}
       <div class="absolute z-10 border-red border rounded-full text-red py-[6.4px] px-[12.8px] gap-[12.8px] font-display text-tag text-center">
