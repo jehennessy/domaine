@@ -1330,3 +1330,35 @@ class CartPerformance {
     );
   }
 }
+
+function updateProductCard(event) {
+  const { target } = event;
+  const selectedSwatch = target.closest('.js-swatch');
+  const productCard = target.closest('.js-product-card');
+  let allSwatches = productCard.querySelectorAll('.js-swatch');
+  const newFeaturedImage = selectedSwatch.dataset.featuredImage;
+  const newFeaturedImageAlt = selectedSwatch.dataset.featuredImageAlt;
+  const newSecondaryImage = selectedSwatch.dataset.secondaryImage;
+  const newSecondaryImageAlt = selectedSwatch.dataset.secondaryImageAlt;
+  let images = productCard.querySelectorAll('.js-product-img');
+
+  images.forEach((image) => {
+    if (image.classList.contains('js-featured-img')) {
+      image.src = newFeaturedImage;
+      image.srcset = newFeaturedImage;
+      image.alt = newFeaturedImageAlt;
+    } else {
+      image.src = newSecondaryImage;
+      image.srcset = newSecondaryImage;
+      image.alt = newSecondaryImageAlt;
+    }
+  })
+
+  allSwatches.forEach((swatch) => {
+    if(swatch === selectedSwatch) {
+      swatch.classList.add('selected');
+    } else {
+      swatch.classList.remove('selected');
+    }
+  });
+}

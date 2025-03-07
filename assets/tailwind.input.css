@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import url("https://use.typekit.net/hyc8cnm.css");
+
+@theme {
+    --color-grey-5: #E8E8E8;
+    --color-red: #FF0000;
+    --color-blue: #0A4874;
+    --color-black: #111111;
+    --font-display: "franklin-gothic-atf", sans-serif;
+    --font-body: "roboto", sans-serif;
+    --text-tag: 15.37px;
+    --text-tag--line-height: 17.93px; 
+    --text-tag--letter-spacing: 0%; 
+    --text-tag--font-weight: 500; 
+    --text-body: 14px;
+    --text-body--line-height: 16px; 
+    --text-body--letter-spacing: 0%;
+    --text-body--font-weight: 400;
+    --text-product-title: 16px;
+    --text-product-title--line-height: 18px;
+    --text-product-title--letter-spacing: 0%;
+    --text-product-title--font-weight: 500;
+    --aspect-product-image: 11/12; 
+}
+
+.selected span:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--color-blue);
+    border-radius: 50%;
+}
