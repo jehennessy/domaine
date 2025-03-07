@@ -10,9 +10,9 @@
         {% assign lowercase_title = card_product.first_available_variant.title | downcase %}
         {% if image.alt contains card_product.first_available_variant.title or image.alt contains lowercase_title %}
           {% if image == card_product.first_available_variant.featured_image %}
-            {{ image.src | image_url: width: 800 | image_tag: class: 'js-product-img js-featured-img opacity-100 absolute w-full h-auto aspect-product-image object-contain transition-opacity duration-300 group-hover:opacity-0' }}
+            {{ image.src | image_url: width: 320 | image_tag: class: 'js-product-img js-featured-img opacity-100 absolute w-full h-auto aspect-product-image object-contain transition-opacity duration-300 group-hover:opacity-0' }}
           {% else %}
-            {{ image.src | image_url: width: 800 | image_tag: class: 'js-product-img opacity-0 absolute w-full h-auto aspect-product-image object-contain transition-opacity duration-300 group-hover:opacity-100' }}
+            {{ image.src | image_url: width: 320 | image_tag: class: 'js-product-img opacity-0 absolute w-full h-auto aspect-product-image object-contain transition-opacity duration-300 group-hover:opacity-100' }}
           {% endif %}
         {% endif %}
       {% endfor %}
@@ -27,14 +27,14 @@
         {% for image in card_product.images %}
           {% if image.alt contains variant.title or image.alt contains lowercase_title %}
             {% unless image == variant.featured_image %}
-              {% assign variant_second_image = image.src | image_url: width: 800 %}
+              {% assign variant_second_image = image.src | image_url: width: 320 %}
               {% assign variant_second_image_alt = image.alt %}
               {% break %}
             {% endunless %}
           {% endif %}
         {% endfor %}
         {% if variant.metafields.custom.swatch != blank %}
-          <button class="js-swatch cursor-pointer flex items-center justify-center relative{% if card_product.first_available_variant == variant %} selected{% endif %}" data-variant="{{ variant.title }}" data-featured-image="{{ variant.featured_image.src | image_url: width: 800 }}" data-featured-image-alt="{{ variant.featured_image.alt }}" data-secondary-image="{{ variant_second_image }}" data-secondary-image-alt="{{ variant_second_image_alt }}" onclick="updateProductCard(event)">
+          <button class="js-swatch cursor-pointer flex items-center justify-center relative{% if card_product.first_available_variant == variant %} selected{% endif %}" data-variant="{{ variant.title }}" data-featured-image="{{ variant.featured_image.src | image_url: width: 320 }}" data-featured-image-alt="{{ variant.featured_image.alt }}" data-secondary-image="{{ variant_second_image }}" data-secondary-image-alt="{{ variant_second_image_alt }}" onclick="updateProductCard(event)">
             <span class="w-[20px] h-[20px] flex items-center justify-center rounded-full aspect-square" style="background: {{ variant.metafields.custom.swatch.value }};"></span>
           </button>
         {% endif %}
