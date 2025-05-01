@@ -47,9 +47,9 @@
       <h3 class="text-product-title font-body text-blue">{{ card_product.title }}</h3>
       <div class="flex gap-[8px] items-center justify-start">
         {% if card_product.compare_at_price != blank %}
-          <p class="text-body font-display text-black line-through">{{ card_product.compare_at_price | money }}</p>
+          <p class="text-body font-body text-black line-through">{{ card_product.compare_at_price | money }}</p>
         {% endif %}
-        <p class="text-body font-display{% if card_product.compare_at_price != blank %} text-red{% endif %}">{{ card_product.price | money }}</p>
+        <p class="text-body font-body {% if card_product.compare_at_price != blank %} text-red{% endif %}">{{ card_product.price | money }}</p>
       </div>
     </a>
   </div>
